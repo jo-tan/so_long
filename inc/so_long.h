@@ -88,6 +88,7 @@ void			map_width(t_game *game, char *file);
 unsigned int	mlx_get_pixel(t_img *img, int x, int y);
 void			mlx_draw_pixel(t_img *mlx_img, int x, int y, int color);
 unsigned int	mlx_rgb_to_int(int o, int r, int g, int b);
+void			draw(t_game *game);
 /*init_texture*/
 void			load_texture(t_game *game, t_img **img, char *path);
 void			init_texture(t_game *game);
@@ -101,7 +102,6 @@ void			move_down(t_game *game, int x, int y);
 void			move_left(t_game *game, int x, int y);
 void			move_right(t_game *game, int x, int y);
 /*update*/
-void			draw(t_game *game);
 void			update(t_game *game);
 /*exit*/
 void			ft_exit(char *errmsg, int errnum);
