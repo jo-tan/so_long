@@ -26,7 +26,7 @@ all:		$(MLX) $(LFT) o_dir $(NAME)
 $(NAME):	$(OBJ)
 			@$(CC) $(FLAGS) -o $@ $^ $(LIB)
 			@echo " Norminette check.."
-			@norminette src/ libft/
+			@norminette inc/ src/ libft/
 			@echo " [ OK ] | so_long ready!"
 
 $(MLX):
