@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hook.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jo-tan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jo-tan <jo-tan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:49:04 by jo-tan            #+#    #+#             */
-/*   Updated: 2023/09/22 17:49:10 by jo-tan           ###   ########.fr       */
+/*   Updated: 2023/09/27 10:55:22 by jo-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int	key_release(int keycode, t_game *game)
 
 int	destroy_hook(int keycode, t_game *game)
 {
-	(void)keycode;
-	(void)game;
+	(void) keycode;
+	(void) game;
 	destroy_game(0, 0, 0);
 	return (0);
 }

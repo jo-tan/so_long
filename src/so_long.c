@@ -6,7 +6,7 @@
 /*   By: jo-tan <jo-tan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:48:07 by jo-tan            #+#    #+#             */
-/*   Updated: 2023/09/24 12:30:00 by jo-tan           ###   ########.fr       */
+/*   Updated: 2023/09/27 10:11:17 by jo-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	main(int ac, char **av)
 		ft_exit("invalid argument (<map>.ber)", 0);
 	game = game_init(av[1]);
 	draw(game);
-	mlx_hook(game->win, 2, 1L << 0, key_press, game);
-	mlx_hook(game->win, 3, 1L << 1, key_release, game);
-	mlx_hook(game->win, 17, 1L << 17, destroy_hook, game);
+	mlx_hook(game->win, KeyPress, 1L << 0, key_press, game);
+	mlx_hook(game->win, KeyRelease, 1L << 1, key_release, game);
+	mlx_hook(game->win, DestroyNotify, 0, destroy_hook, game);
 	mlx_loop(game->mlx);
 	return (0);
 }

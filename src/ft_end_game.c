@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_end_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jo-tan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jo-tan <jo-tan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 12:31:34 by jo-tan            #+#    #+#             */
-/*   Updated: 2023/09/24 12:31:39 by jo-tan           ###   ########.fr       */
+/*   Updated: 2023/09/27 09:13:38 by jo-tan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,16 @@ void	map_destroy(t_map *map)
 
 void	destroy_image(t_game *game)
 {
-	if (game != 0)
-	{
-		if (game->exit != 0)
-			mlx_destroy_image(game->mlx, game->exit);
-		if (game->collectable != 0)
-			mlx_destroy_image(game->mlx, game->collectable);
-		if (game->wall != 0)
-			mlx_destroy_image(game->mlx, game->wall);
-		if (game->floor != 0)
-			mlx_destroy_image(game->mlx, game->floor);
-		if (game->player != 0)
-			mlx_destroy_image(game->mlx, game->player);
-	}
+	if (game->exit != 0)
+		mlx_destroy_image(game->mlx, game->exit);
+	if (game->collectable != 0)
+		mlx_destroy_image(game->mlx, game->collectable);
+	if (game->wall != 0)
+		mlx_destroy_image(game->mlx, game->wall);
+	if (game->floor != 0)
+		mlx_destroy_image(game->mlx, game->floor);
+	if (game->player != 0)
+		mlx_destroy_image(game->mlx, game->player);
 }
 
 void	destroy_game(t_game *game, char *errmsg, int errnum)
