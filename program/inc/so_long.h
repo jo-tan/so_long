@@ -18,9 +18,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <errno.h>
-# include "../mlx/mlx.h"
-# include "../mlx/mlx_int.h"
-# include "../libft/libft.h"
+# include <mlx.h>
+# include <mlx_int.h>
+# include "libft.h"
 
 /*data streams*/
 # define EXIT_SUCCESS	0

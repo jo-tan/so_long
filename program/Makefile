@@ -1,10 +1,9 @@
 NAME		=	so_long
 CC			=	cc
 FLAGS		=	-Wall -Wextra -Werror -g3
-MLX			=	mlx/Makefile.gen
 LFT			=	libft/libft.a
-INC			=	-I ./inc -I ./libft -I ./mlx -I /usr/X11/include/
-LIB			=	-L ./libft -lft -L ./mlx -lmlx -lX11 -lmlx -lXext -lm -g -L /usr/X11/lib 
+INC			=	-I ./inc -I ./libft -I /usr/local/include
+LIB			=	-L ./libft -lft -L /usr/local/lib -lmlx -lX11 -lXext -lbsd
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
 SRC			=	src/ft_draw_map.c \
 				src/ft_hook.c \
@@ -21,20 +20,13 @@ SRC			=	src/ft_draw_map.c \
 				src/ft_update.c\
 				src/ft_end_game.c
 
-all:		$(MLX) $(LFT) o_dir $(NAME)
+all:		libft o_dir $(NAME)
 
 $(NAME):	$(OBJ)
-			@$(CC) $(FLAGS) -o $@ $^ $(LIB)
-			@echo " Norminette check.."
-			@norminette inc/ src/ libft/
+			@$(CC) $(FLAGS) $(INC) -o $@ $^ $(LIB)
 			@echo " [ OK ] | so_long ready!"
 
-$(MLX):
-			@echo " [ .. ] | Compiling minilibx.."
-			@make -sC mlx
-			@echo " [ OK ] | Minilibx ready!"
-
-$(LFT):		
+libft:		
 			@echo " [ .. ] | Compiling libft.."
 			@make -sC libft
 			@echo " [ OK ] | Libft ready!"
@@ -58,4 +50,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re libft
